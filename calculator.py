@@ -4,238 +4,238 @@ import tkinter.messagebox
 
 
 class calculator:
-    # ½çÃæ²¼¾Ö·½·¨
+    # ç•Œé¢å¸ƒå±€æ–¹æ³•
     def __init__(self):
-        # ´´½¨Ö÷½çÃæ£¬²¢ÇÒ±£´æµ½³ÉÔ±ÊôĞÔÖĞ
+        # åˆ›å»ºä¸»ç•Œé¢ï¼Œå¹¶ä¸”ä¿å­˜åˆ°æˆå‘˜å±æ€§ä¸­
         self.root = tkinter.Tk()
         self.root.minsize(280, 450)
         self.root.maxsize(280, 470)
-        self.root.title('vipJr¼ÆËãÆ÷')
-        # ÉèÖÃÏÔÊ½Ãæ°åµÄ±äÁ¿
+        self.root.title('vipJrè®¡ç®—å™¨')
+        # è®¾ç½®æ˜¾å¼é¢æ¿çš„å˜é‡
         self.result = tkinter.StringVar()
         self.result.set(0)
-        # ÉèÖÃÒ»¸öÈ«¾Ö±äÁ¿  ÔËËãÊı×ÖºÍf·ûºÅµÄÁĞ±í
+        # è®¾ç½®ä¸€ä¸ªå…¨å±€å˜é‡  è¿ç®—æ•°å­—å’Œfç¬¦å·çš„åˆ—è¡¨
         self.lists = []
-        # Ìí¼ÓÒ»¸öÓÃÓÚÅĞ¶ÏÊÇ·ñ°´ÏÂÔËËã·ûºÅµÄ±êÖ¾
+        # æ·»åŠ ä¸€ä¸ªç”¨äºåˆ¤æ–­æ˜¯å¦æŒ‰ä¸‹è¿ç®—ç¬¦å·çš„æ ‡å¿—
         self.ispresssign = False
-        # ½çÃæ²¼¾Ö
+        # ç•Œé¢å¸ƒå±€
         self.menus()
         self.layout()
         self.root.mainloop()
 
-    # ¼ÆËãÆ÷²Ëµ¥½çÃæ°Ú·Å
+    # è®¡ç®—å™¨èœå•ç•Œé¢æ‘†æ”¾
     def menus(self):
-        # Ìí¼Ó²Ëµ¥
-        # ´´½¨×Ü²Ëµ¥
+        # æ·»åŠ èœå•
+        # åˆ›å»ºæ€»èœå•
         allmenu = tkinter.Menu(self.root)
-        # Ìí¼Ó×Ó²Ëµ¥
+        # æ·»åŠ å­èœå•
         filemenu = tkinter.Menu(allmenu, tearoff=0)
-        # Ìí¼ÓÑ¡Ïî¿¨
-        filemenu.add_command(label='±ê×¼ĞÍ(T)            Alt+1', command=self.myfunc)
-        filemenu.add_command(label='¿ÆÑ§ĞÍ(S)            Alt+2', command=self.myfunc)
-        filemenu.add_command(label='³ÌĞòÔ±(P)            Alt+3', command=self.myfunc)
-        filemenu.add_command(label='Í³¼ÆĞÅÏ¢(A)        Alt+4', command=self.myfunc)
-        # Ìí¼Ó·Ö¸îÏß
+        # æ·»åŠ é€‰é¡¹å¡
+        filemenu.add_command(label='æ ‡å‡†å‹(T)            Alt+1', command=self.myfunc)
+        filemenu.add_command(label='ç§‘å­¦å‹(S)            Alt+2', command=self.myfunc)
+        filemenu.add_command(label='ç¨‹åºå‘˜(P)            Alt+3', command=self.myfunc)
+        filemenu.add_command(label='ç»Ÿè®¡ä¿¡æ¯(A)        Alt+4', command=self.myfunc)
+        # æ·»åŠ åˆ†å‰²çº¿
         filemenu.add_separator()
-        # Ìí¼ÓÑ¡Ïî¿¨
-        filemenu.add_command(label='ÀúÊ·¼ÇÂ¼(Y)      Ctrl+H', command=self.myfunc)
-        filemenu.add_command(label='Êı×Ö·Ö×é(I)', command=self.myfunc)
-        # Ìí¼Ó·Ö¸îÏß
+        # æ·»åŠ é€‰é¡¹å¡
+        filemenu.add_command(label='å†å²è®°å½•(Y)      Ctrl+H', command=self.myfunc)
+        filemenu.add_command(label='æ•°å­—åˆ†ç»„(I)', command=self.myfunc)
+        # æ·»åŠ åˆ†å‰²çº¿
         filemenu.add_separator()
-        # Ìí¼ÓÑ¡Ïî¿¨
-        filemenu.add_command(label='»ù±¾(B)             Ctrl+F4', command=self.myfunc)
-        filemenu.add_command(label='µ¥Î»×ª»»(U)      Ctrl+U', command=self.myfunc)
-        filemenu.add_command(label='ÈÕÆÚ¼ÆËã(D)      Ctrl+E', command=self.myfunc)
+        # æ·»åŠ é€‰é¡¹å¡
+        filemenu.add_command(label='åŸºæœ¬(B)             Ctrl+F4', command=self.myfunc)
+        filemenu.add_command(label='å•ä½è½¬æ¢(U)      Ctrl+U', command=self.myfunc)
+        filemenu.add_command(label='æ—¥æœŸè®¡ç®—(D)      Ctrl+E', command=self.myfunc)
         menu1 = tkinter.Menu(filemenu, tearoff=0)
-        menu1.add_command(label='µÖÑº(M)', command=self.myfunc)
-        menu1.add_command(label='Æû³µ×âÁŞ(V)', command=self.myfunc)
-        menu1.add_command(label='ÓÍºÄ(mpg)(F)', command=self.myfunc)
-        menu1.add_command(label='ÓÍºÄ(l/100km)(U)', command=self.myfunc)
-        filemenu.add_cascade(label='¹¤×÷±í(W)', menu=menu1)
-        allmenu.add_cascade(label='²é¿´(V)', menu=filemenu)
+        menu1.add_command(label='æŠµæŠ¼(M)', command=self.myfunc)
+        menu1.add_command(label='æ±½è½¦ç§Ÿèµ(V)', command=self.myfunc)
+        menu1.add_command(label='æ²¹è€—(mpg)(F)', command=self.myfunc)
+        menu1.add_command(label='æ²¹è€—(l/100km)(U)', command=self.myfunc)
+        filemenu.add_cascade(label='å·¥ä½œè¡¨(W)', menu=menu1)
+        allmenu.add_cascade(label='æŸ¥çœ‹(V)', menu=filemenu)
 
-        # Ìí¼Ó×Ó²Ëµ¥2
+        # æ·»åŠ å­èœå•2
         editmenu = tkinter.Menu(allmenu, tearoff=0)
-        # Ìí¼ÓÑ¡Ïî¿¨
-        editmenu.add_command(label='¸´ÖÆ(C)         Ctrl+C', command=self.myfunc)
-        editmenu.add_command(label='Õ³Ìù(V)         Ctrl+V', command=self.myfunc)
-        # Ìí¼Ó·Ö¸îÏß
+        # æ·»åŠ é€‰é¡¹å¡
+        editmenu.add_command(label='å¤åˆ¶(C)         Ctrl+C', command=self.myfunc)
+        editmenu.add_command(label='ç²˜è´´(V)         Ctrl+V', command=self.myfunc)
+        # æ·»åŠ åˆ†å‰²çº¿
         editmenu.add_separator()
-        # Ìí¼ÓÑ¡Ïî¿¨
+        # æ·»åŠ é€‰é¡¹å¡
         menu2 = tkinter.Menu(filemenu, tearoff=0)
-        menu2.add_command(label='¸´ÖÆÀúÊ·¼ÇÂ¼(I)', command=self.myfunc)
-        menu2.add_command(label='±à¼­(E)                      F2', command=self.myfunc)
-        menu2.add_command(label='È¡Ïû±à¼­(N)            Esc', command=self.myfunc)
-        menu2.add_command(label='Çå³ı(L)    Ctrl+Shift+D', command=self.myfunc)
-        editmenu.add_cascade(label='ÀúÊ·¼ÇÂ¼(H)', menu=menu2)
-        allmenu.add_cascade(label='±à¼­(E)', menu=editmenu)
+        menu2.add_command(label='å¤åˆ¶å†å²è®°å½•(I)', command=self.myfunc)
+        menu2.add_command(label='ç¼–è¾‘(E)                      F2', command=self.myfunc)
+        menu2.add_command(label='å–æ¶ˆç¼–è¾‘(N)            Esc', command=self.myfunc)
+        menu2.add_command(label='æ¸…é™¤(L)    Ctrl+Shift+D', command=self.myfunc)
+        editmenu.add_cascade(label='å†å²è®°å½•(H)', menu=menu2)
+        allmenu.add_cascade(label='ç¼–è¾‘(E)', menu=editmenu)
 
-        # Ìí¼Ó×Ó²Ëµ¥3
+        # æ·»åŠ å­èœå•3
         helpmenu = tkinter.Menu(allmenu, tearoff=0)
-        # Ìí¼ÓÑ¡Ïî¿¨
-        helpmenu.add_command(label='²é¿´°ïÖú(V)       F1', command=self.myfunc)
-        # Ìí¼Ó·Ö¸îÏß
+        # æ·»åŠ é€‰é¡¹å¡
+        helpmenu.add_command(label='æŸ¥çœ‹å¸®åŠ©(V)       F1', command=self.myfunc)
+        # æ·»åŠ åˆ†å‰²çº¿
         helpmenu.add_separator()
-        # Ìí¼ÓÑ¡Ïî¿¨
-        helpmenu.add_command(label='¹ØÓÚ¼ÆËãÆ÷(A)', command=self.myfunc)
-        allmenu.add_cascade(label='°ïÖú(H)', menu=helpmenu)
+        # æ·»åŠ é€‰é¡¹å¡
+        helpmenu.add_command(label='å…³äºè®¡ç®—å™¨(A)', command=self.myfunc)
+        allmenu.add_cascade(label='å¸®åŠ©(H)', menu=helpmenu)
 
         self.root.config(menu=allmenu)
 
-    # ¼ÆËãÆ÷Ö÷½çÃæ°Ú·Å
+    # è®¡ç®—å™¨ä¸»ç•Œé¢æ‘†æ”¾
     def layout(self):
-        # ÏÔÊ¾ÆÁ
+        # æ˜¾ç¤ºå±
         result = tkinter.StringVar()
         result.set(0)
-        show_label = tkinter.Label(self.root, bd=3, bg='white', font=('ËÎÌå', 30), anchor='e', textvariable=self.result)
+        show_label = tkinter.Label(self.root, bd=3, bg='white', font=('å®‹ä½“', 30), anchor='e', textvariable=self.result)
         show_label.place(x=5, y=20, width=270, height=70)
-        # ¹¦ÄÜ°´Å¥MC
+        # åŠŸèƒ½æŒ‰é’®MC
         button_mc = tkinter.Button(self.root, text='MC', command=self.wait)
         button_mc.place(x=5, y=95, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥MR
+        # åŠŸèƒ½æŒ‰é’®MR
         button_mr = tkinter.Button(self.root, text='MR', command=self.wait)
         button_mr.place(x=60, y=95, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥MS
+        # åŠŸèƒ½æŒ‰é’®MS
         button_ms = tkinter.Button(self.root, text='MS', command=self.wait)
         button_ms.place(x=115, y=95, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥M+
+        # åŠŸèƒ½æŒ‰é’®M+
         button_mjia = tkinter.Button(self.root, text='M+', command=self.wait)
         button_mjia.place(x=170, y=95, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥M-
+        # åŠŸèƒ½æŒ‰é’®M-
         button_mjian = tkinter.Button(self.root, text='M-', command=self.wait)
         button_mjian.place(x=225, y=95, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥¡û
-        button_zuo = tkinter.Button(self.root, text='¡û', command=self.dele_one)
+        # åŠŸèƒ½æŒ‰é’®â†
+        button_zuo = tkinter.Button(self.root, text='â†', command=self.dele_one)
         button_zuo.place(x=5, y=150, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥CE
+        # åŠŸèƒ½æŒ‰é’®CE
         button_ce = tkinter.Button(self.root, text='CE', command=lambda: self.result.set(0))
         button_ce.place(x=60, y=150, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥C
+        # åŠŸèƒ½æŒ‰é’®C
         button_c = tkinter.Button(self.root, text='C', command=self.sweeppress)
         button_c.place(x=115, y=150, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥¡À
-        button_zf = tkinter.Button(self.root, text='¡À', command=self.zf)
+        # åŠŸèƒ½æŒ‰é’®Â±
+        button_zf = tkinter.Button(self.root, text='Â±', command=self.zf)
         button_zf.place(x=170, y=150, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥¡Ì
-        button_kpf = tkinter.Button(self.root, text='¡Ì', command=self.kpf)
+        # åŠŸèƒ½æŒ‰é’®âˆš
+        button_kpf = tkinter.Button(self.root, text='âˆš', command=self.kpf)
         button_kpf.place(x=225, y=150, width=50, height=50)
-        # Êı×Ö°´Å¥7
+        # æ•°å­—æŒ‰é’®7
         button_7 = tkinter.Button(self.root, text='7', command=lambda: self.pressnum('7'))
         button_7.place(x=5, y=205, width=50, height=50)
-        # Êı×Ö°´Å¥8
+        # æ•°å­—æŒ‰é’®8
         button_8 = tkinter.Button(self.root, text='8', command=lambda: self.pressnum('8'))
         button_8.place(x=60, y=205, width=50, height=50)
-        # Êı×Ö°´Å¥9
+        # æ•°å­—æŒ‰é’®9
         button_9 = tkinter.Button(self.root, text='9', command=lambda: self.pressnum('9'))
         button_9.place(x=115, y=205, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥/
+        # åŠŸèƒ½æŒ‰é’®/
         button_division = tkinter.Button(self.root, text='/', command=lambda: self.presscalculate('/'))
         button_division.place(x=170, y=205, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥%
+        # åŠŸèƒ½æŒ‰é’®%
         button_remainder = tkinter.Button(self.root, text='//', command=lambda: self.presscalculate('//'))
         button_remainder.place(x=225, y=205, width=50, height=50)
-        # Êı×Ö°´Å¥4
+        # æ•°å­—æŒ‰é’®4
         button_4 = tkinter.Button(self.root, text='4', command=lambda: self.pressnum('4'))
         button_4.place(x=5, y=260, width=50, height=50)
-        # Êı×Ö°´Å¥5
+        # æ•°å­—æŒ‰é’®5
         button_5 = tkinter.Button(self.root, text='5', command=lambda: self.pressnum('5'))
         button_5.place(x=60, y=260, width=50, height=50)
-        # Êı×Ö°´Å¥6
+        # æ•°å­—æŒ‰é’®6
         button_6 = tkinter.Button(self.root, text='6', command=lambda: self.pressnum('6'))
         button_6.place(x=115, y=260, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥*
+        # åŠŸèƒ½æŒ‰é’®*
         button_multiplication = tkinter.Button(self.root, text='*', command=lambda: self.presscalculate('*'))
         button_multiplication.place(x=170, y=260, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥1/x
+        # åŠŸèƒ½æŒ‰é’®1/x
         button_reciprocal = tkinter.Button(self.root, text='1/x', command=self.ds)
         button_reciprocal.place(x=225, y=260, width=50, height=50)
-        # Êı×Ö°´Å¥1
+        # æ•°å­—æŒ‰é’®1
         button_1 = tkinter.Button(self.root, text='1', command=lambda: self.pressnum('1'))
         button_1.place(x=5, y=315, width=50, height=50)
-        # Êı×Ö°´Å¥2
+        # æ•°å­—æŒ‰é’®2
         button_2 = tkinter.Button(self.root, text='2', command=lambda: self.pressnum('2'))
         button_2.place(x=60, y=315, width=50, height=50)
-        # Êı×Ö°´Å¥3
+        # æ•°å­—æŒ‰é’®3
         button_3 = tkinter.Button(self.root, text='3', command=lambda: self.pressnum('3'))
         button_3.place(x=115, y=315, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥-
+        # åŠŸèƒ½æŒ‰é’®-
         button_subtraction = tkinter.Button(self.root, text='-', command=lambda: self.presscalculate('-'))
         button_subtraction.place(x=170, y=315, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥=
+        # åŠŸèƒ½æŒ‰é’®=
         button_equal = tkinter.Button(self.root, text='=', command=lambda: self.pressequal())
         button_equal.place(x=225, y=315, width=50, height=105)
-        # Êı×Ö°´Å¥0
+        # æ•°å­—æŒ‰é’®0
         button_0 = tkinter.Button(self.root, text='0', command=lambda: self.pressnum('0'))
         button_0.place(x=5, y=370, width=105, height=50)
-        # ¹¦ÄÜ°´Å¥.
+        # åŠŸèƒ½æŒ‰é’®.
         button_point = tkinter.Button(self.root, text='.', command=lambda: self.pressnum('.'))
         button_point.place(x=115, y=370, width=50, height=50)
-        # ¹¦ÄÜ°´Å¥+
+        # åŠŸèƒ½æŒ‰é’®+
         button_plus = tkinter.Button(self.root, text='+', command=lambda: self.presscalculate('+'))
         button_plus.place(x=170, y=370, width=50, height=50)
 
-    # ¼ÆËãÆ÷²Ëµ¥¹¦ÄÜ
+    # è®¡ç®—å™¨èœå•åŠŸèƒ½
     def myfunc(self):
-        tkinter.messagebox.showinfo('', '³ÌĞòÔ±ÀÁËÀÔÚµçÄÔÇ°£¬´òËÀÒ²×ö²»³öµÄ¹¦ÄÜ£¬Ö»ÊÇ×°ÊÎ¶øÒÑ¡«')
+        tkinter.messagebox.showinfo('', 'ç¨‹åºå‘˜æ‡’æ­»åœ¨ç”µè„‘å‰ï¼Œæ‰“æ­»ä¹Ÿåšä¸å‡ºçš„åŠŸèƒ½ï¼Œåªæ˜¯è£…é¥°è€Œå·²ï½')
 
-    # Êı×Ö·½·¨
+    # æ•°å­—æ–¹æ³•
     def pressnum(self, num):
-        # È«¾Ö»¯±äÁ¿
-        # ÅĞ¶ÏÊÇ·ñ°´ÏÂÁËÔËËã·ûºÅ
+        # å…¨å±€åŒ–å˜é‡
+        # åˆ¤æ–­æ˜¯å¦æŒ‰ä¸‹äº†è¿ç®—ç¬¦å·
         if self.ispresssign == False:
             pass
         else:
             self.result.set(0)
-            # ÖØÖÃÔËËã·ûºÅµÄ×´Ì¬
+            # é‡ç½®è¿ç®—ç¬¦å·çš„çŠ¶æ€
             self.ispresssign = False
         if num == '.':
             num = '0.'
-        # »ñÈ¡Ãæ°åÖĞµÄÔ­ÓĞÊı×Ö
+        # è·å–é¢æ¿ä¸­çš„åŸæœ‰æ•°å­—
         oldnum = self.result.get()
-        # ÅĞ¶Ï½çÃæÊı×ÖÊÇ·ñÎª0
+        # åˆ¤æ–­ç•Œé¢æ•°å­—æ˜¯å¦ä¸º0
         if oldnum == '0':
             self.result.set(num)
         else:
-            # Á¬½ÓÉÏĞÂ°´ÏÂµÄÊı×Ö
+            # è¿æ¥ä¸Šæ–°æŒ‰ä¸‹çš„æ•°å­—
             newnum = oldnum + num
 
-            # ½«°´ÏÂµÄÊı×ÖĞ´µ½Ãæ°åÖĞ
+            # å°†æŒ‰ä¸‹çš„æ•°å­—å†™åˆ°é¢æ¿ä¸­
             self.result.set(newnum)
 
-    # ÔËËãº¯Êı
+    # è¿ç®—å‡½æ•°
     def presscalculate(self, sign):
-        # ±£´æÒÑ¾­°´ÏÂµÄÊı×ÖºÍÔËËã·ûºÅ
-        # »ñÈ¡½çÃæÊı×Ö
+        # ä¿å­˜å·²ç»æŒ‰ä¸‹çš„æ•°å­—å’Œè¿ç®—ç¬¦å·
+        # è·å–ç•Œé¢æ•°å­—
         num = self.result.get()
         self.lists.append(num)
-        # ±£´æ°´ÏÂµÄ²Ù×÷·ûºÅ
+        # ä¿å­˜æŒ‰ä¸‹çš„æ“ä½œç¬¦å·
         self.lists.append(sign)
-        # ÉèÖÃÔËËã·ûºÅÎª°´ÏÂ×´Ì¬
+        # è®¾ç½®è¿ç®—ç¬¦å·ä¸ºæŒ‰ä¸‹çŠ¶æ€
         self.ispresssign = True
 
-    # »ñÈ¡ÔËËã½á¹û
+    # è·å–è¿ç®—ç»“æœ
     def pressequal(self):
-        # »ñÈ¡ËùÓĞµÄÁĞ±íÖĞµÄÄÚÈİ£¨Ö®Ç°µÄÊı×ÖºÍ²Ù×÷£©
-        # »ñÈ¡µ±Ç°½çÃæÉÏµÄÊı×Ö
+        # è·å–æ‰€æœ‰çš„åˆ—è¡¨ä¸­çš„å†…å®¹ï¼ˆä¹‹å‰çš„æ•°å­—å’Œæ“ä½œï¼‰
+        # è·å–å½“å‰ç•Œé¢ä¸Šçš„æ•°å­—
         curnum = self.result.get()
-        # ½«µ±Ç°½çÃæµÄÊı×Ö´æÈëÁĞ±í
+        # å°†å½“å‰ç•Œé¢çš„æ•°å­—å­˜å…¥åˆ—è¡¨
         self.lists.append(curnum)
-        # ½«ÁĞ±í×ª»¯Îª×Ö·û´®
+        # å°†åˆ—è¡¨è½¬åŒ–ä¸ºå­—ç¬¦ä¸²
         calculatestr = ''.join(self.lists)
-        # Ê¹ÓÃevalÖ´ĞĞ×Ö·û´®ÖĞµÄÔËËã¼´¿É
+        # ä½¿ç”¨evalæ‰§è¡Œå­—ç¬¦ä¸²ä¸­çš„è¿ç®—å³å¯
         endnum = eval(calculatestr)
-        # ½«ÔËËã½á¹ûÏÔÊ¾ÔÚ½çÃæÖĞ
+        # å°†è¿ç®—ç»“æœæ˜¾ç¤ºåœ¨ç•Œé¢ä¸­
         self.result.set(str(endnum)[:10])
         if self.lists != 0:
             self.ispresssign = True
-        # Çå¿ÕÔËËãÁĞ±í
+        # æ¸…ç©ºè¿ç®—åˆ—è¡¨
         self.lists.clear()
 
-    # ÔİÎ´¿ª·¢ËµÃ÷
+    # æš‚æœªå¼€å‘è¯´æ˜
     def wait(self):
-        tkinter.messagebox.showinfo('', '¹¦ÄÜÔÚÅ¬Á¦µÄÊµÏÖ£¬ÇëÆÚ´ı2.0°æ±¾µÄ¸üĞÂ')
+        tkinter.messagebox.showinfo('', 'åŠŸèƒ½åœ¨åŠªåŠ›çš„å®ç°ï¼Œè¯·æœŸå¾…2.0ç‰ˆæœ¬çš„æ›´æ–°')
 
-    # ¡û°´¼ü¹¦ÄÜ
+    # â†æŒ‰é”®åŠŸèƒ½
     def dele_one(self):
         if self.result.get() == '' or self.result.get() == '0':
             self.result.set('0')
@@ -249,7 +249,7 @@ class calculator:
             else:
                 self.result.set('0')
 
-    # ¡À°´¼ü¹¦ÄÜ
+    # Â±æŒ‰é”®åŠŸèƒ½
     def zf(self):
         strnum = self.result.get()
         if strnum[0] == '-':
@@ -257,21 +257,21 @@ class calculator:
         elif strnum[0] != '-' and strnum != '0':
             self.result.set('-' + strnum)
 
-    # 1/x°´¼ü¹¦ÄÜ
+    # 1/xæŒ‰é”®åŠŸèƒ½
     def ds(self):
         dsnum = 1 / int(self.result.get())
         self.result.set(str(dsnum)[:10])
         if self.lists != 0:
             self.ispresssign = True
-        # Çå¿ÕÔËËãÁĞ±í
+        # æ¸…ç©ºè¿ç®—åˆ—è¡¨
         self.lists.clear()
 
-    # C°´¼ü¹¦ÄÜ
+    # CæŒ‰é”®åŠŸèƒ½
     def sweeppress(self):
         self.lists.clear()
         self.result.set(0)
 
-    # ¡Ì°´¼ü¹¦ÄÜ
+    # âˆšæŒ‰é”®åŠŸèƒ½
     def kpf(self):
         strnum = float(self.result.get())
         endnum = math.sqrt(strnum)
@@ -281,9 +281,9 @@ class calculator:
             self.result.set(str(endnum)[:10])
         if self.lists != 0:
             self.ispresssign = True
-        # Çå¿ÕÔËËãÁĞ±í
+        # æ¸…ç©ºè¿ç®—åˆ—è¡¨
         self.lists.clear()
 
 
-# ÊµÀı»¯¶ÔÏó
+# å®ä¾‹åŒ–å¯¹è±¡
 mycalculator = calculator()
