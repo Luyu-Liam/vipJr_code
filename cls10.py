@@ -1,6 +1,6 @@
 # 下面的needCheck为一个状态标志，用来表示是否需要复习的状态；如果值为"y"表示需要复习，如果值为"n"表示不需要复习。
 needCheck = 'y'
-wordBook = {'red':'红色', 'desk':'桌子', 'food':'食物'}   # 生词本
+wordBook = {'red': '红色', 'desk': '桌子', 'food': '食物'}   # 生词本
 
 # 下面这样写的错误在哪里？
 # while needCheck == 'y':
