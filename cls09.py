@@ -11,7 +11,7 @@ while result == 0:
     else: # 没猜中
         result = 0
         print('你这个菜鸡，猜错了，重来！！！')
-    print('骰子的点数为：%d' %target)
+    print('骰子的点数为：%d' % target)
     print('*'*50)
 
 

@@ -76,12 +76,15 @@ while not flag:
 5. 判断101~200之间有多少个素数，并输出所有素数。
 """
 # for循环来做
+count = 0
 for number in range(101, 201):
     for i in range(2, number):
         if number % i == 0:   # 一旦发现2~number-1的范围有数字可以被number除尽，则说明不是质数，循环停止
             break
     else:
+        count += 1
         print(number)
+print(count)
 
 # while循环来做
 number = 101
