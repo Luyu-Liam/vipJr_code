@@ -6,6 +6,7 @@
 # Software: PyCharm
 import tkinter
 
+"""
 # 关于tkinter的基本使用
 root = tkinter.Tk()
 root.title("vipJr打造的专属计算器")   # 设置窗体标题
@@ -37,8 +38,10 @@ class GUICal:
     # 计算器主界面摆放
     def layout(self):
         # 显示屏
+        show_info = tkinter.Label(self.root, bd=3, bg='white', font=('宋体', 30), anchor='e',)
+        show_info.place(x=5, y=20, width=270, height=32)
         show_label = tkinter.Label(self.root, bd=3, bg='white', font=('宋体', 30), anchor='e')
-        show_label.place(x=5, y=20, width=270, height=70)
+        show_label.place(x=5, y=58, width=270, height=32)
         # 功能按钮MC
         button_mc = tkinter.Button(self.root, text='MC')
         button_mc.place(x=5, y=95, width=50, height=50)
@@ -127,4 +130,3 @@ class GUICal:
 
 if __name__ == '__main__':
     c = GUICal()
-"""
