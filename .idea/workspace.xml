@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0b45309-a10b-45f2-af71-a04c802c9971" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cls26.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cls25.py" beforeDir="false" afterPath="$PROJECT_DIR$/cls25.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,12 +28,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cls25.py">
+        <entry file="file://$PROJECT_DIR$/cls26.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2371">
-              <caret line="164" column="22" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
+            <state relative-caret-position="348">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
-                <element signature="e#121#135#0" expanded="true" />
+                <element signature="e#784#790#0" expanded="true" />
+                <element signature="e#790#796#0" expanded="true" />
+                <element signature="e#796#802#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,6 +47,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -66,12 +69,13 @@
         <option value="$PROJECT_DIR$/review.py" />
         <option value="$PROJECT_DIR$/2048/pro02.py" />
         <option value="$PROJECT_DIR$/cls1.py" />
-        <option value="$PROJECT_DIR$/cls24.py" />
         <option value="$PROJECT_DIR$/cls23.py" />
         <option value="$PROJECT_DIR$/cls01.py" />
         <option value="$PROJECT_DIR$/cls02.py" />
         <option value="$PROJECT_DIR$/cls14.py" />
         <option value="$PROJECT_DIR$/cls25.py" />
+        <option value="$PROJECT_DIR$/cls24.py" />
+        <option value="$PROJECT_DIR$/cls26.html" />
       </list>
     </option>
   </component>
@@ -103,6 +107,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -271,23 +276,23 @@
       <workItem from="1548200776112" duration="535000" />
       <workItem from="1548230996095" duration="2479000" />
       <workItem from="1548253261108" duration="856000" />
-      <workItem from="1548322805044" duration="4231000" />
+      <workItem from="1548322805044" duration="5800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48089000" />
+    <option name="totallyTimeSpent" value="49658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15873016" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15873016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20918368" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20918368" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -420,13 +425,6 @@
     <entry file="file://$PROJECT_DIR$/cls29.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cls24.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2109">
@@ -482,10 +480,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cls25.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2371">
-          <caret line="164" column="22" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
+        <state relative-caret-position="179">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="e#121#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cls24.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cls26.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#784#790#0" expanded="true" />
+            <element signature="e#790#796#0" expanded="true" />
+            <element signature="e#796#802#0" expanded="true" />
           </folding>
         </state>
       </provider>
