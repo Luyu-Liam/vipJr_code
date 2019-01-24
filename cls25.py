@@ -163,7 +163,6 @@ class GUICal:
 
 class Cal:
     def __init__(self):
-        self.symbols = ['+', '-', '*', '/']
         self.showText = ''  # 用来显示运算的式子
         self.showResult = ''  # 用来显示运算结果
 
