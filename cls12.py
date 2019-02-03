@@ -1,4 +1,5 @@
 
+"""
 def taiyi(radius, color1, color2):
     t.color('black', color1)
     t.begin_fill()
@@ -33,4 +34,8 @@ def Main():
 import turtle
 t = turtle.Pen()
 Main()
-turtle.mainloop()
+t.mainloop()
+"""
+salary = [25, 50, 50, 12.5, 12.5, 50, 12.5]
+salary = sum(salary)
+print(salary)

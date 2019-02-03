@@ -13,7 +13,7 @@ f.penup()
 f.goto(-200, 200)
 f.pendown()
 for i in range(3000):
-    f.pencolor(color[i%4])
+    f.pencolor(color[i % 4])
     f.fd(300)
     f.rt(91)
 

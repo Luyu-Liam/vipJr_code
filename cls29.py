@@ -80,8 +80,9 @@ class Translator:
             }
         response = requests.post(self.post_url, data=data, headers=self.headers)
         dict_res = json.loads(response.content.decode())
-        result = dict_res['trans'][0]['dst']
-        print("{}: {}".format(self.query_str, result))
+        print(dict_res)
+        # result = dict_res['trans'][0]['dst']
+        # print("{}: {}".format(self.query_str, result))
 
 
 mytranslator = Translator("人生苦短，我用python")

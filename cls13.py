@@ -1,5 +1,7 @@
 import pygame
 import random
+
+
 def main():
     screen = pygame.display.set_mode((800, 800))
     pygame.display.set_caption('BALL')
@@ -25,9 +27,5 @@ def main():
             ball_y = 0
         pygame.display.update()
 
+
 main()
-
-
-
-
-
