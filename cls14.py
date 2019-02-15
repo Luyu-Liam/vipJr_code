@@ -2,9 +2,11 @@ import random
 import sys
 import pygame
 
+
 def print_text(scr, font, x, y, text, color=(250, 25, 255)):
     imgText = font.render(text, True, color)
     scr.blit(imgText, (x, y))
+
 
 def playGame(scr, lives, score):
     font1 = pygame.font.Font(None, 24)
@@ -16,6 +18,7 @@ def playGame(scr, lives, score):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
             elif event.type == pygame.MOUSEMOTION:
                 rect_x, _ = event.pos
                 if rect_x < 0:
@@ -25,8 +28,8 @@ def playGame(scr, lives, score):
         scr.fill(white)
         pygame.draw.rect(scr, (30, 0, 0), (rect_x, rect_y, rect_w, rect_h), 0)
 
-        print_text(scr, font1, 0, 0, "Lives: "+str(lives))
-        print_text(scr, font1, 500, 0, "Score: "+str(score))
+        print_text(scr, font1, 0, 0, "Lives: " + str(lives))
+        print_text(scr, font1, 500, 0, "Score: " + str(score))
         pygame.display.update()
 
 
@@ -35,6 +38,3 @@ screen = pygame.display.set_mode((600, 500))
 pygame.display.set_caption("Drop Ball")
 font1 = pygame.font.Font(None, 24)
 playGame(screen, 3, 0)
-
-
-
