@@ -13,6 +13,7 @@ class youdao_trans:
         self.url = "http://m.youdao.com/translate"
         self.headers = {"User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 "
                                       "(KHTML, like Gecko) Chrome/70.0.3538.102 Mobile Safari/537.36"}
+
     def translate(self, content):
         response = self.parse(content)
         self.get_result(response)

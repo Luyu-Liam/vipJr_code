@@ -3,6 +3,7 @@ import random
 import curses
 from itertools import chain
 
+
 class Action(object):
 
     UP = 'up'
