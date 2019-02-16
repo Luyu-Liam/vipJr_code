@@ -42,13 +42,13 @@ class TiebaSpider:
 
 
 if __name__ == '__main__':
-    # spider_ycy = TiebaSpider("杨超越")
-    # spider_ycy.run(20, 25)
+    spider_ycy = TiebaSpider("杨超越")
+    spider_ycy.run(20, 25)
 
     # 如何爬取一张图片？
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"}
-    img_url = "http://imgsrc.baidu.com/forum/w%3D580%3B/sign=ce9fe5bc01d79123e0e0947c9d0f5882/9c16fdfaaf51f3deb0900cd099eef01f3a297967.jpg"
-    response = requests.get(img_url, headers=headers)
-    with open("ycy2.jpg", "wb") as f:
-        f.write(response.content)
+    # headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"}
+    # img_url = "http://imgsrc.baidu.com/forum/w%3D580%3B/sign=ce9fe5bc01d79123e0e0947c9d0f5882/9c16fdfaaf51f3deb0900cd099eef01f3a297967.jpg"
+    # response = requests.get(img_url, headers=headers)
+    # with open("ycy2.jpg", "wb") as f:
+    #     f.write(response.content)
 
