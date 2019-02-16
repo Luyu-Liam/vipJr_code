@@ -107,6 +107,7 @@ class Grid(object):
     def __init__(self, size):
         self.size = size
         self.cells = None
+        self.score = 0
         self.reset()
 
     def reset(self):
@@ -119,6 +120,8 @@ class Grid(object):
         (i, j) = random.choice(empty_cells)
         # 90%的概率生成4，10%的概率生成2
         self.cells[i][j] = 4 if random.randrange(100) >= 90 else 2
+        full_cells = [self.cells[i][j] for i in range(self.size) for j in range(self.size) if self.cells[i][j] != 0]
+        self.score = sum(full_cells)
 
     def transpose(self):
         self.cells = [list(row) for row in zip(*self.cells)]
