@@ -1,5 +1,8 @@
 import sys
 import pygame
+import random
+import time
+
 
 def print_text(scr, font, x, y, text, color=(250, 25, 255)):
     """
@@ -14,6 +17,7 @@ def print_text(scr, font, x, y, text, color=(250, 25, 255)):
     imgText = font.render(text, True, color)
     scr.blit(imgText, (x, y))
 
+
 def playGame(scr, lives, score):
     """
     游戏函数
@@ -27,6 +31,7 @@ def playGame(scr, lives, score):
     ball_x, ball_y = random.randint(0, 500), 0  # 球的初始位置
     vel_y = 0.1  # 球下落的速度
     white = 255, 255, 255
+    black = 0, 0, 0
     # 给球设定随机的颜色
     r = random.randint(0, 255)
     g = random.randint(0, 255)
@@ -53,8 +58,6 @@ def playGame(scr, lives, score):
         elif keys[pygame.K_LEFT]:
             rect_x -= 0.5
 
-        scr.fill(white)
-        pygame.draw.rect(scr, (30, 0, 0), (rect_x, rect_y, rect_w, rect_h), 0)
         ball_y += vel_y
         if ball_y > 500:
             # 没接住
@@ -64,11 +67,14 @@ def playGame(scr, lives, score):
             r = random.randint(0, 255)
             g = random.randint(0, 255)
             b = random.randint(0, 255)
-            # vel_y = vel_y - score/50  # 没接住时速度缓冲一下
+            vel_y = vel_y - score / 50  # 没接住时速度缓冲一下
+            scr = pygame.display.set_mode((700, 600))
+            time.sleep(0.1)
+
         elif (rect_y - ball_y) < 30 and rect_x < ball_x < (rect_x + rect_w):
             # 接住了
             score += 1
-            vel_y = 0.1 + score/50
+            vel_y = 0.1 + score / 50
             ball_x = random.randint(0, 500)
             ball_y = 0
             r = random.randint(0, 255)
@@ -76,9 +82,12 @@ def playGame(scr, lives, score):
             b = random.randint(0, 255)
         else:
             ball_y += vel_y
+        scr = pygame.display.set_mode((600, 500))
+        scr.fill(black)
+        pygame.draw.rect(scr, (255, 0, 0), (rect_x, rect_y, rect_w, rect_h), 0)
         pygame.draw.circle(scr, [r, g, b], (int(ball_x), int(ball_y)), 30, 0)
-        print_text(scr, font1, 0, 0, "Lives: "+str(lives))
-        print_text(scr, font1, 500, 0, "Score: "+str(score))
+        print_text(scr, font1, 0, 0, "Lives: " + str(lives))
+        print_text(scr, font1, 500, 0, "Score: " + str(score))
         pygame.display.update()
     return lives, score
 
@@ -90,7 +99,6 @@ font1 = pygame.font.Font(None, 24)
 lives, score = 3, 0
 while True:
     lives, score = playGame(screen, lives, score)
-    print(lives, score)
     for e in pygame.event.get():
         if e.type == pygame.MOUSEBUTTONUP:
             lives = 3
@@ -102,4 +110,3 @@ while True:
     print_text(screen, font1, 250, 250, 'GAME OVER!')
     print_text(screen, font1, 240, 270, 'Score:{} <Replay>'.format(str(score)))
     pygame.display.update()
-    
