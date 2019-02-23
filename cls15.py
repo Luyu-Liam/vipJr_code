@@ -1,7 +1,6 @@
 import sys
 import pygame
 import random
-import time
 
 
 def print_text(scr, font, x, y, text, color=(250, 25, 255)):
@@ -26,11 +25,11 @@ def playGame(scr, lives, score):
     :param score: 分数
     :return: 返回当前生命值和分数
     """
+    global x, y
     font1 = pygame.font.Font(None, 24)  # 显示的字体
     rect_x, rect_y, rect_w, rect_h = 300, 460, 120, 40  # 接球板的大小和位置
     ball_x, ball_y = random.randint(0, 500), 0  # 球的初始位置
     vel_y = 0.1  # 球下落的速度
-    white = 255, 255, 255
     black = 0, 0, 0
     # 给球设定随机的颜色
     r = random.randint(0, 255)
@@ -68,8 +67,9 @@ def playGame(scr, lives, score):
             g = random.randint(0, 255)
             b = random.randint(0, 255)
             vel_y = vel_y - score / 50  # 没接住时速度缓冲一下
-            scr = pygame.display.set_mode((700, 600))
-            time.sleep(0.1)
+            x = 200
+            y = 200
+            pygame.init()
 
         elif (rect_y - ball_y) < 30 and rect_x < ball_x < (rect_x + rect_w):
             # 接住了
@@ -82,7 +82,6 @@ def playGame(scr, lives, score):
             b = random.randint(0, 255)
         else:
             ball_y += vel_y
-        scr = pygame.display.set_mode((600, 500))
         scr.fill(black)
         pygame.draw.rect(scr, (255, 0, 0), (rect_x, rect_y, rect_w, rect_h), 0)
         pygame.draw.circle(scr, [r, g, b], (int(ball_x), int(ball_y)), 30, 0)
