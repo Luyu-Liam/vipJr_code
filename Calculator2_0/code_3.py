@@ -143,15 +143,32 @@ class Calculator(object):
                     del self.inputList[k]
                 self.inputList.append(str(round(eval('1/' + str(listSum)), 5)))
         elif button == self.ButtonList[19]:  # %
-            pass
+            listSum, locate = self.checkList()  # 首先检查一下是否含有符号
+            if locate == -1:  # 不含符号，纯数字，那么直接运算即可
+                self.inputList = [str(listSum*0.01)]
+            else:  # 含有符号
+                for k in range(len(self.inputList)-1, locate, -1):
+                    print(self.inputList[k])
+                    del self.inputList[k]
+                self.inputList.append(str(listSum*0.01))
         elif button == self.ButtonList[20]:  # sqrt开平方
-            pass
+            listSum, locate = self.checkList()  # 首先检查一下是否含有符号
+            if locate == -1:  # 不含符号，纯数字，那么直接运算即可
+                self.inputList = [str(round(listSum**0.5, 5))]
+            else:  # 含有符号
+                for k in range(len(self.inputList)-1, locate, -1):
+                    del self.inputList[k]
+                self.inputList.append(str(round(listSum**0.5, 5)))
         else:
             self.inputList.append(button)
         self.count.set(self.inputList)
 
     def equal(self):
-        pass
+        result = ""
+        for item in self.inputList:
+            result += str(item)
+        result = eval(result)
+        self.count.set(result)
 
     def start(self):
         self.tk.mainloop()
