@@ -4,10 +4,7 @@
 # Author: Liam
 # E-mail: luyu.real@qq.com
 # Software: PyCharm
-from mylibs.constant import *
-
-num_list = '0123456789'
-alphanum_list = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:'
+from mylibs.constant import char_cap, required_bytes, mindex, lindex, num_list, alphanum_list, grouping_list, mode_indicator
 
 
 def numeric_encoding(string):
@@ -28,7 +25,6 @@ def numeric_encoding(string):
 
 
 def alphanumeric_encoding(string):
-    alphanum_list = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:'
     code_list = [alphanum_list.index(i) for i in string]
     code = ""
     for i in range(1, len(code_list), 2):
